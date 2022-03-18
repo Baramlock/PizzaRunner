@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 
-internal class Item
+public class Item
 {
     private readonly Transform _transform;
-
     private float _radius;
     public Item(Transform transform)
     {
         _transform = transform;
         UpdateRadius();
     }
+
+    public Transform Transform => _transform;
 
     public Vector3 Position
     {

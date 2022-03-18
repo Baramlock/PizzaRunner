@@ -4,8 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(CaseAnimation))]
 public class Case : MonoBehaviour
 {
-    private readonly List<Transform> _transformList = new List<Transform>();
-    private readonly List<Item> _caseObjects = new List<Item>();
+    private readonly List<Item> _caseItems = new List<Item>();
 
     [SerializeField] private Transform _prefabs;
     [SerializeField] private Transform _center;
@@ -27,69 +26,66 @@ public class Case : MonoBehaviour
 
     private void OnEnable()
     {
-        TouchTrigger.Bread += AddPizza;
-        TouchTrigger.Bread += StartAnimation;
+        TouchTrigger.BreadTouched += AddPizza;
+        TouchTrigger.BreadTouched += StartAnimation;
         ModelSubstitute.ModelChanged += UpdateRadius;
-        SellPizzaAction.RemovePizza += RemovePizza;
+        SellPizzaAction.PizzaSelled += RemovePizza;
     }
 
     private void OnDisable()
     {
-        TouchTrigger.Bread -= AddPizza;
-        TouchTrigger.Bread -= StartAnimation;
+        TouchTrigger.BreadTouched -= AddPizza;
+        TouchTrigger.BreadTouched -= StartAnimation;
         ModelSubstitute.ModelChanged -= UpdateRadius;
-        SellPizzaAction.RemovePizza -= RemovePizza;
+        SellPizzaAction.PizzaSelled -= RemovePizza;
     }
 
     private void StartAnimation()
     {
-        _animator.StartAnimationCorutinne(_transformList);
+        _animator.StartAnimationCorutinne(_caseItems);
     }
 
     private void UpdateRadius()
     {
-        for (int i = 0; i < _caseObjects.Count; i++)
+        for (int i = 0; i < _caseItems.Count; i++)
         {
-            _caseObjects[i].UpdateRadius();
+            _caseItems[i].UpdateRadius();
         }
     }
 
     private void AddPizza()
     {
         Vector3 startPosition;
-        if (_transformList.Count == 0)
+        if (_caseItems.Count == 0)
             startPosition = _center.position;
         else
-            startPosition = _transformList[_transformList.Count - 1].position;
+            startPosition = _caseItems[_caseItems.Count - 1].Transform.position;
 
         var pizza = Instantiate(_prefabs, startPosition, Quaternion.identity, transform);
-        _transformList.Add(pizza);
-        var item = new Item(pizza);
-        _caseObjects.Add(item);
-        _engine.Add(_caseObjects[_caseObjects.Count - 1]);
+        _caseItems.Add(new Item(pizza));
+        _engine.Add(_caseItems[_caseItems.Count - 1]);
     }
 
     private void RemovePizza(Transform transform)
     {
-        if (_transformList == null)
+        if (_caseItems == null)
         {
             return;
         }
 
-        for (int i = 0; i < _transformList.Count; i++)
+        for (int i = 0; i < _caseItems.Count; i++)
         {
-            if (_transformList[i] == transform)
+            if (_caseItems[i].Transform == transform)
             {
-                _transformList[i].parent = _plane;
-                _transformList.RemoveAt(i);
+                _caseItems[i].Transform.parent = _plane;
+                _caseItems.RemoveAt(i);
                 _engine.Remove(i);
-                _caseObjects.RemoveAt(i);
             }
         }
 
-        if (_transformList.Count != 0)
+        if (_caseItems.Count != 0)
         {
-            _transformList[0].position = _center.position;
+            _caseItems[0].Transform.position = _center.position;
         }
     }
 }

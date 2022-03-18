@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class MoneyCounter : MonoBehaviour
 {
     [SerializeField] private BalanceDisplay _balanceDisplay;
-    [SerializeField] private float _timeToCombo = 1.5f;
     [SerializeField] private CashAnimator _cashAnimator;
+    [SerializeField] private float _timeToCombo = 1.5f;
 
     private int _money;
     private int _moneyCombo;
@@ -16,7 +16,7 @@ public class MoneyCounter : MonoBehaviour
     public void Addmoney(IMoneyGiveable money)
     {
         _money += money.GiveMoney();
-        _balanceDisplay.ToText(_money);
+        _balanceDisplay.DisplayText(_money);
 
         if (_money < 0)
         {

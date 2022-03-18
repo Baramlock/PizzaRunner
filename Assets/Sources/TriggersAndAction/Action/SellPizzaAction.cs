@@ -6,11 +6,11 @@ public class SellPizzaAction : Action
 {
     [SerializeField] private int _changeMoney = -6;
 
-    public static event UnityAction<Transform> RemovePizza;
+    public static event UnityAction<Transform> PizzaSelled;
 
     public override void PerfomingAction()
     {
-        RemovePizza?.Invoke(transform.parent);
+        PizzaSelled?.Invoke(transform.parent);
         transform.DOMoveX(100, 5);
     }
 

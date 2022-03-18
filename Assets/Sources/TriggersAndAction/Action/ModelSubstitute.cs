@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class ModelSubstitute : Action
 {
     [SerializeField] private Transform _nextModel;
-    [SerializeField] private bool _inAnimation = false;
+    [SerializeField] private bool _isAnimation = false;
     [SerializeField] private int _changeMoney = 1;
 
     private float _startScale;
@@ -21,7 +21,7 @@ public class ModelSubstitute : Action
 
         ModelChanged?.Invoke();
 
-        if (_inAnimation)
+        if (_isAnimation)
         {
             transform.parent.DOScale(_animationScale, _timeAnimationl);
             transform.parent.DOScale(_startScale, _timeAnimationl).SetDelay(_timeAnimationl);

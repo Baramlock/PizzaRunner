@@ -45,9 +45,7 @@ public class MoneyAnimation : MonoBehaviour
         var fadeAnimation = money.DOFade(0, _timeToFade).SetDelay(_timeToFade);
 
         while (fadeAnimation.IsActive())
-        {
             yield return timeToCheckFade;
-        }
 
         money.color = color;
         pool.Return(money);

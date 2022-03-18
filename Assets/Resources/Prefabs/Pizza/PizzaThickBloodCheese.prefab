@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 3391309293259080625, guid: 2a1ae69bd327d1148bf8d63db12b9292, type: 3}
-  _inAnimation: 1
+  _isAnimation: 1
   _changeMoney: 1
 --- !u!1 &6321463852673998939
 GameObject:

@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 7002364592426693979, guid: 27109a60391db3d45b32fdc9528a8ab7, type: 3}
-  _inAnimation: 1
+  _isAnimation: 1
   _changeMoney: 1
 --- !u!1001 &783577205501783928
 PrefabInstance:

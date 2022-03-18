@@ -11,7 +11,7 @@ public class TouchTrigger : MonoBehaviour
     private BreadAction _breadAction;
 
     public static event UnityAction<IMoneyGiveable> MoneyChanged;
-    public static event UnityAction Bread;
+    public static event UnityAction BreadTouched;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class TouchTrigger : MonoBehaviour
                 {
                     bread.Touch = true;
                     Destroy(trigger.gameObject);
-                    TouchTrigger.Bread.Invoke();
+                    BreadTouched.Invoke();
                     MoneyChanged?.Invoke(_breadAction);
                     trigger.StartMoneyAnimation();
                 }

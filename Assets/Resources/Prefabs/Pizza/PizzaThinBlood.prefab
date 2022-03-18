@@ -223,5 +223,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 7002364592426693979, guid: 4e36b3e8544f88f4d8302e1e0debc14e, type: 3}
-  _inAnimation: 1
+  _isAnimation: 1
   _changeMoney: 1

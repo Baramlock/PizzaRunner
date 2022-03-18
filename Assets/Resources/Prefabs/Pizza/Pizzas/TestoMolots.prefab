@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerActions:
-  - Trigger: {fileID: 2602449705692586067, guid: 791c467f043a81141a738a002f29c738, type: 3}
-    Action: {fileID: 6246853826691415840}
-  - Trigger: {fileID: 7502928675183493920, guid: ba168dca91c18874680eec73ea7c73fe, type: 3}
-    Action: {fileID: -471945449184649268}
-  _isTouch: 0
+  - _trigger: {fileID: 0}
+    _action: {fileID: 0}
+  - _trigger: {fileID: 0}
+    _action: {fileID: 0}
+  _inTrigger: 0
+  _moneyToBread: 1
 --- !u!114 &6246853826691415840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 2073666906761031716, guid: 49bdbfa5e128aa84c98cbb6aa4f6d7c1, type: 3}
-  Animation: 1
+  _isAnimation: 1
+  _changeMoney: 1
 --- !u!114 &-471945449184649268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 76760369122897156, guid: 59fe5e8a07bf37346901f79a4b3c144a, type: 3}
-  Animation: 1
+  _isAnimation: 1
+  _changeMoney: 1
 --- !u!135 &5159157255269024624
 SphereCollider:
   m_ObjectHideFlags: 0

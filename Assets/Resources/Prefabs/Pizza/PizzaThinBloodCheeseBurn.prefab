@@ -308,5 +308,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextModel: {fileID: 7002364592426693979, guid: 5eef6e5e8c07ed3488806f88c83c6828, type: 3}
-  _inAnimation: 1
+  _isAnimation: 1
   _changeMoney: -6
