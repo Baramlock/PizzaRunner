@@ -2,15 +2,15 @@
 
 public abstract class Trigger : MonoBehaviour
 {
-    [SerializeField] private MoneyAnimation moneyAnimation;
+    [SerializeField] private MoneyAnimation _moneyAnimation;
 
     public void StartMoneyAnimation()
     {
-        if (moneyAnimation == null)
+        if (_moneyAnimation == null)
         {
             return;
         }
 
-        moneyAnimation.StartAnimation();
+        _moneyAnimation.StartAnimation();
     }
 }
