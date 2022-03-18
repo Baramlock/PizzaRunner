@@ -11,12 +11,12 @@ public class Case : MonoBehaviour
     [SerializeField] private Transform _plane;
 
     private CaseAnimation _animator;
-    private ÑaseEngine _engine;
+    private CaseEngine _engine;
 
     private void Start()
     {
         _animator = GetComponent<CaseAnimation>();
-        _engine = new ÑaseEngine();
+        _engine = new CaseEngine();
     }
 
     private void FixedUpdate()

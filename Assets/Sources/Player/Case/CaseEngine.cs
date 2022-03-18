@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-internal class ÑaseEngine
+internal class CaseEngine
 {
     private readonly List<Item> _caseObjects = new List<Item>();
     private readonly List<ItemMover> _objectMoves = new List<ItemMover>();
