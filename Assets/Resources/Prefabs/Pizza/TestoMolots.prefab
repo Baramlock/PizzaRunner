@@ -132,6 +132,9 @@ MonoBehaviour:
   _nextModel: {fileID: 3391309293259080625, guid: 02efc4f25a263284aa6dc5ed6b9ba90f, type: 3}
   _isAnimation: 1
   _changeMoney: 1
+  _startScale: 1
+  _animationScale: 1.6
+  _timeAnimationl: 0.15
 --- !u!114 &7501521304827577157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +150,6 @@ MonoBehaviour:
   _nextModel: {fileID: 7002364592426693979, guid: 59fe5e8a07bf37346901f79a4b3c144a, type: 3}
   _isAnimation: 1
   _changeMoney: 1
+  _startScale: 1
+  _animationScale: 1.6
+  _timeAnimationl: 0.15

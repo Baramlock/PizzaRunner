@@ -12,6 +12,14 @@ public class Pool<T>
         _prefab = prefab;
     }
 
+    public void CreateItems(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Return(Object.Instantiate(_prefab, Vector3.zero, Quaternion.identity));
+        }
+    }
+
     public void Return(T prefab)
     {
         prefab.gameObject.SetActive(false);

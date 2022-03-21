@@ -28,6 +28,7 @@ public class TouchTrigger : MonoBehaviour
                 if (bread.Touch == false)
                 {
                     bread.Touch = true;
+                    trigger.gameObject.SetActive(false);
                     Destroy(trigger.gameObject);
                     BreadTouched.Invoke();
                     MoneyChanged?.Invoke(_breadAction);

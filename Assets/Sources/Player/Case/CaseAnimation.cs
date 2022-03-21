@@ -12,7 +12,7 @@ public class CaseAnimation : MonoBehaviour
     private WaitForSeconds _waitForSeconds;
     public void StartAnimationCorutinne(List<Item> list)
     {
-        StartCoroutine(StartAnimation(list));
+        StartCoroutine(StartAnimations(list));
     }
 
     private void Start()
@@ -20,12 +20,15 @@ public class CaseAnimation : MonoBehaviour
         _waitForSeconds = new WaitForSeconds(_waitNext);
     }
 
-    private IEnumerator StartAnimation(List<Item> list)
+    private IEnumerator StartAnimations(List<Item> list)
     {
+        yield return new WaitForEndOfFrame();
         for (int i = list.Count - 1; i >= 0; i--)
         {
-            list[i].Transform.DOScale(_scaleAnimation, _timeAnimation);
-            list[i].Transform.DOScale(1, _timeAnimation).SetDelay(_timeAnimation);
+            Debug.Log(i);
+            var tween = DOTween.Sequence();
+            tween.Append(list[i].Transform.DOScale(_scaleAnimation, _timeAnimation));
+            tween.Append(list[i].Transform.DOScale(1, _timeAnimation));
             yield return _waitForSeconds;
         }
     }

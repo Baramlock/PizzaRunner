@@ -8,7 +8,7 @@ public class MoneyCounter : MonoBehaviour
     [SerializeField] private CashAnimator _cashAnimator;
     [SerializeField] private float _timeToCombo = 1.5f;
 
-    private int _money;
+    private int _money = 1;
     private int _moneyCombo;
     private float _timeFromPreviousCombo;
 

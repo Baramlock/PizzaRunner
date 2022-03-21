@@ -8,9 +8,9 @@ public class ModelSubstitute : Action
     [SerializeField] private bool _isAnimation = false;
     [SerializeField] private int _changeMoney = 1;
 
-    private float _startScale;
-    private float _animationScale;
-    private float _timeAnimationl;
+    [SerializeField] private float _startScale = 1;
+    [SerializeField] private float _animationScale = 1.6f;
+    [SerializeField] private float _timeAnimationl = 0.15f;
 
     public static event UnityAction ModelChanged;
 
@@ -33,12 +33,5 @@ public class ModelSubstitute : Action
     public override int GiveMoney()
     {
         return _changeMoney;
-    }
-
-    private void Start()
-    {
-        _startScale = 1;
-        _animationScale = 1.3f;
-        _timeAnimationl = 0.2f;
     }
 }

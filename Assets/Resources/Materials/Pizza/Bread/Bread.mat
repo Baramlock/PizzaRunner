@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Bread
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
-  m_ShaderKeywords: DR_CEL_EXTRA_ON _CELPRIMARYMODE_SINGLE _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: DR_CEL_EXTRA_ON DR_GRADIENT_ON _CELPRIMARYMODE_SINGLE _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
     _TEXTUREBLENDINGMODE_MULTIPLY _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -80,15 +80,15 @@ Material:
     - _FlatRimSize: 0.569
     - _FlatSpecularEdgeSmoothness: 1
     - _FlatSpecularSize: 0.075
-    - _Flatness: 0.476
-    - _FlatnessExtra: 0.68
+    - _Flatness: 0.06
+    - _FlatnessExtra: 0.692
     - _GlossMapScale: 0.475
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GradientAngle: 277
+    - _GradientAngle: 126
     - _GradientCenterX: 0
     - _GradientCenterY: 0
-    - _GradientEnabled: 0
+    - _GradientEnabled: 1
     - _GradientSize: 10
     - _LightContribution: 0
     - _LightmapDirectionPitch: 0
@@ -102,10 +102,10 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _RimEnabled: 0
-    - _SelfShadingSize: 0.779
-    - _SelfShadingSizeExtra: 0.538
-    - _ShadowEdgeSize: 0.233
-    - _ShadowEdgeSizeExtra: 0.294
+    - _SelfShadingSize: 0.646
+    - _SelfShadingSizeExtra: 0.516
+    - _ShadowEdgeSize: 0.169
+    - _ShadowEdgeSizeExtra: 0.199
     - _SmoothnessTextureChannel: 1
     - _SpecularEnabled: 0
     - _SpecularHighlights: 1
@@ -125,7 +125,7 @@ Material:
     - _ColorDimCurve: {r: 0.8867924, g: 0.51433957, b: 0, a: 0}
     - _ColorDimExtra: {r: 0.3773585, g: 0.2959457, b: 0.21181916, a: 1}
     - _ColorDimSteps: {r: 0.5849056, g: 0.4771395, b: 0.32831967, a: 0}
-    - _ColorGradient: {r: 0.5660378, g: 0.44989324, b: 0.3337487, a: 1}
+    - _ColorGradient: {r: 0.5660378, g: 0.42823917, b: 0.28568888, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.2924528, g: 0.23934227, b: 0.18623175, a: 1}
     - _FlatSpecularColor: {r: 0.6509434, g: 0.5326939, b: 0.43907973, a: 1}
