@@ -21,14 +21,10 @@ internal class CaseEngine
         if (number == 0)
         {
             if (_objectMoves.Count != 0)
-            {
                 _objectMoves.RemoveAt(number);
-            }
 
             if (_caseObjects.Count > 1)
-            {
                 _objectMoves.Insert(number, new ItemMover(_caseObjects[number], _caseObjects[number + 1]));
-            }
         }
         else if (number == _caseObjects.Count - 1)
         {

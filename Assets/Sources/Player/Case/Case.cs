@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,11 +61,7 @@ public class Case : MonoBehaviour
 
     private void AddPizza()
     {
-        Vector3 startPosition;
-        if (_caseItems.Count == 0)
-            startPosition = _center.position;
-        else
-            startPosition = _caseItems[_caseItems.Count - 1].Transform.position;
+        var startPosition = _caseItems.Count == 0 ? _center.position : _caseItems[_caseItems.Count - 1].Transform.position;
         var pizza = _pool.Get(startPosition, transform);
         _caseItems.Add(new Item(pizza.transform));
         _engine.Add(_caseItems[_caseItems.Count - 1]);
@@ -74,7 +71,7 @@ public class Case : MonoBehaviour
     {
         if (_caseItems == null)
         {
-            return;
+            throw new ArgumentNullException();
         }
 
         for (int i = 0; i < _caseItems.Count; i++)

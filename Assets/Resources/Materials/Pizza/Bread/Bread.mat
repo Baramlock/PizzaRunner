@@ -102,7 +102,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _RimEnabled: 0
-    - _SelfShadingSize: 0.28
+    - _SelfShadingSize: 0.41
     - _SelfShadingSizeExtra: 0.516
     - _ShadowEdgeSize: 0.29
     - _ShadowEdgeSizeExtra: 0.199
