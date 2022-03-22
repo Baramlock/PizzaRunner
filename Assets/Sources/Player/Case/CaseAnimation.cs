@@ -9,6 +9,7 @@ public class CaseAnimation : MonoBehaviour
     [SerializeField] private float _timeAnimation;
     [SerializeField] private float _scaleAnimation;
 
+    private float _timeOneAnimation;
     private WaitForSeconds _waitForSeconds;
     public void StartAnimationCorutinne(List<Item> list)
     {
@@ -18,6 +19,8 @@ public class CaseAnimation : MonoBehaviour
     private void Start()
     {
         _waitForSeconds = new WaitForSeconds(_waitNext);
+        int countAnimation = 2;
+        _timeOneAnimation = _timeAnimation / countAnimation;
     }
 
     private IEnumerator StartAnimations(List<Item> list)
@@ -27,8 +30,8 @@ public class CaseAnimation : MonoBehaviour
         for (int i = list.Count - 1; i >= 0; i--)
         {
             var tween = DOTween.Sequence();
-            tween.Append(list[i].Transform.DOScale(_scaleAnimation, _timeAnimation));
-            tween.Append(list[i].Transform.DOScale(1, _timeAnimation));
+            tween.Append(list[i].Transform.DOScale(_scaleAnimation, _timeOneAnimation));
+            tween.Append(list[i].Transform.DOScale(1, _timeOneAnimation));
             yield return _waitForSeconds;
         }
     }
