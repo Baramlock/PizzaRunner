@@ -23,9 +23,9 @@ public class CaseAnimation : MonoBehaviour
     private IEnumerator StartAnimations(List<Item> list)
     {
         yield return new WaitForEndOfFrame();
+
         for (int i = list.Count - 1; i >= 0; i--)
         {
-            Debug.Log(i);
             var tween = DOTween.Sequence();
             tween.Append(list[i].Transform.DOScale(_scaleAnimation, _timeAnimation));
             tween.Append(list[i].Transform.DOScale(1, _timeAnimation));
