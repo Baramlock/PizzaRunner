@@ -22,10 +22,7 @@ public class ModelSubstitute : Action
         ModelChanged?.Invoke();
 
         if (_isAnimation)
-        {
-            transform.parent.DOScale(_animationScale, _timeAnimationl);
-            transform.parent.DOScale(_startScale, _timeAnimationl).SetDelay(_timeAnimationl);
-        }
+            Animation();
 
         Destroy(this.gameObject);
     }
@@ -33,5 +30,11 @@ public class ModelSubstitute : Action
     public override int GiveMoney()
     {
         return _changeMoney;
+    }
+
+    private void Animation()
+    {
+        transform.parent.DOScale(_animationScale, _timeAnimationl);
+        transform.parent.DOScale(_startScale, _timeAnimationl).SetDelay(_timeAnimationl);
     }
 }

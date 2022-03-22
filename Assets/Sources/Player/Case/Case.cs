@@ -22,7 +22,6 @@ public class Case : MonoBehaviour
         _animator = GetComponent<CaseAnimation>();
         _engine = new CaseEngine();
         AddPizza();
-
     }
 
     private void FixedUpdate()
