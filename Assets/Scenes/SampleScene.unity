@@ -7668,8 +7668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613d1bdbb5ac5cc4d8d3072fa10c454a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitNext: 0.06
-  _timeAnimation: 0.12
+  _waitNext: 0.04
+  _timeAnimation: 0.25
   _scaleAnimation: 1.4
 --- !u!114 &541882002
 MonoBehaviour:
